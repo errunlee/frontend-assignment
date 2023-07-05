@@ -1,38 +1,150 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,300&display=swap');
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box
+}
+body{
+  font-family: 'Roboto', sans-serif;
+}
+.pathname{
+  background:#eaded7;
+  font-family:sans-serif;
+  padding:0 0 0 10rem;
+}
+/*navbar  */
+nav .toggle-btn{
+  top:5px;
+  right:10px;
+}
+nav .nav-links li{
+  border-bottom:2px solid transparent;
+  cursor:pointer;
+}
+nav .nav-links a{
+  text-decoration:none;
+  color:black;
+}
+nav .nav-links li:hover{
+  border-bottom:2px solid #675656;
+  transition:0.5s all;
+}
+nav .cart-box p{
+    top: -15px;
+    right: -10px;
+    color: white;
+    font-weight: 900;
+    background: #c2e1e1;
+    height: 30px;
+    width: 30px;
+    margin: 0;
+  padding:3px;
+    border-radius: 50%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+nav .search-form input:focus{
+  outline:none;
 }
+/*why us component  */
+.info-section{
+  margin:7rem 0 0 0;
+}
+  .info:not(:last-child)::after{
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+     content: "";
+    background-color: hsl(180, 66%, 49%);
+    position: absolute;
+    width: 100px;
+    height: 12px;
+    top: 60px;
+    right: -100px;
+    display: block;
+}
+.info2{
+  transform:translateY(20px)
+}
+.info3{
+  transform:translateY(60px)
+}
+.info p{
+  color: hsl(0, 0%, 75%);
+}
+/* single component  */
+
+.singleMovie{
+  display: inline-grid;
+  height: 250px;
+  background-size: contain;
+  background-repeat:no-repeat;
+  outline:4px solid transparent;
+  color:#ffe0b9;
+}
+.singleMovie .title{
+  background-color: rgba(0, 0, 0, 0.5);
+  position: relative;
+  z-index: 2;
+}
+.singleMovie:hover{
+  background-color: rgba(0, 0, 0, 0.6);
+  outline:4px solid rgb(196, 57, 196);
+  cursor: pointer;
+  transition:0.5s all;
+}
+.singleMovie span{
+  top:0;
+  right:0;
+  background:#121212;
+}
+/*search side compo  */
+.search-side input{
+  background:#f1f5f8;
+  
+}
+.search-side .category {
+  cursor:pointer;
+  border-bottom:2px solid transparent;
+  
+}
+.search-side .category:hover {
+  border-bottom:2px solid #574747;
+  transition:0.7s all;
+}
+/*detal page  */
+.capitalize-first::first-letter {
+  text-transform: capitalize;
+}
+.amount{
+  font-size:2.4rem;
+}
+.amount .sign{
+  height:20px;
+  width:20px;
+  cursor:pointer;
+}
+.active{
+  border-bottom:2px solid #3b3030 !important;
+}
+@media only screen and (max-width: 1020px) {
+  .pathname{
+  padding:0 0 0 1rem;
+}
+  .hidden-small{
+    display:none !important;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  .visibile-small{
+    display:initial;
   }
-  to {
-    transform: rotate(360deg);
+  .info{
+    margin:50px 0;
   }
+  .info:not(:last-child)::after{
+     content: "";
+    background-color: hsl(180, 82%, 58%);
+    position: absolute;
+    height: 100px;
+    width: 12px;
+    top: 100%;
+   left:48%;
+    display: block;
+}
 }
