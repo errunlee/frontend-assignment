@@ -1,7 +1,6 @@
 import Whyus from '../components/Whyus'
 import {useEffect} from 'react'
 import {Link} from 'react-router-dom'
-import Carosouel from '../components/Carosouel'
 export default function Homepage(){
       useEffect(()=>{
     const linkItem=document.querySelector('#home')
@@ -13,7 +12,6 @@ export default function Homepage(){
   return(
 
     <div className='container my-5' >
-      {/* <Carosouel/> */}
       <div className='row align-items-center text-center text-lg-start'>
       <div className='col-md-6'>
        <p className='h1 text-uppercase'>The best for the best price</p>
