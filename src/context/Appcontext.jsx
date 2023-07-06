@@ -61,7 +61,7 @@ const AppProvider=({children})=>{
     dispatch({ type: 'GET_TOTALS' })
   }, [state.cart])
  return (
-  <AppContext.Provider value={{getAllProducts,allProducts,getCategories,categories,addToCart,...state,setCategory,searchItem,loading,setLoading}}>{children}</AppContext.Provider>   
+  <AppContext.Provider value={{getAllProducts,allProducts,setAllProducts,getCategories,categories,addToCart,...state,setCategory,searchItem,loading,setLoading}}>{children}</AppContext.Provider>   
  ) 
 }
 
