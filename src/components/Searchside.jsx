@@ -1,19 +1,19 @@
 import {useState,useContext,useEffect} from 'react'
 import {AppContext} from '../context/Appcontext'
+
 export default function Searchside({categories,getAllProducts}){
-const {setCategory,searchItem}=useContext(AppContext)
+  const {setCategory,searchItem}=useContext(AppContext)
   const [query,setQuery]=useState('');
   
   const handleSubmit=(e)=>{
     e.preventDefault();
     searchItem(query)
   }
-  useEffect(()=>{
-    searchItem(query)
-  },[query])
+ 
+ 
   return(
 <div className='search-side'>
-<form onSubmit={handleSubmit} ><input value={query} onChange={((e)=>{setQuery(e.target.value)})} type='text' placeholder='Search here' className='p-1 border-0' ></input></form >
+<form onSubmit={handleSubmit} ><input value={query} onChange={((e)=>{setQuery(e.target.value)})} type='text' placeholder='Find a product' className='p-2 border-0' ></input><button type='submit' className='btn btn-primary btn-sm'>Search</button></form >
 <p className='fw-bolder h5 mt-3'>
 Categories
 </p>

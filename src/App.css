@@ -85,7 +85,7 @@ nav .search-form input:focus{
   z-index: 2;
 }
 .singleMovie:hover{
-  background-color: rgba(0, 0, 0, 0.6);
+  /* background-color: rgba(0, 0, 0, 0.6); */
   outline:4px solid rgb(196, 57, 196);
   cursor: pointer;
   transition:0.5s all;

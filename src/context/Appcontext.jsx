@@ -23,7 +23,6 @@ const AppProvider=({children})=>{
     const res=await fetch(url)
     const data=await res.json();
     setCategories(data)
-    console.log(categories)
   }
 
   // setting products according to category
@@ -37,11 +36,23 @@ const AppProvider=({children})=>{
   }
 
 // search 
-   const searchItem = (query) => {
-    const filteredProducts = allProducts.filter((product) =>
+   const searchItem =async (query) => {
+    
+   const url='https://fakestoreapi.com/products'
+  let data;
+  try{
+    setLoading(true)
+    const res=await fetch(url)
+    data=await res.json();
+    const filteredProducts = data.filter((product) =>
       product.title.toLowerCase().includes(query.toLowerCase())
     );
     setAllProducts(filteredProducts);
+    setLoading(false)
+  }
+  catch{
+    console.log('err')
+  }
   };
   
       

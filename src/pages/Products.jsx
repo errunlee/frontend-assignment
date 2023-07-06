@@ -23,16 +23,13 @@ export default function Products(){
       linkItem.classList.remove('active')
     })
   },[])
-  if(loading){
-    return <Loader/>
-  }
-  if(allProducts.length<=0){
-    return <div><h2 className='text-center text-danger'>No items found.</h2></div>
-  }
+ 
+  // if(allProducts.length<=0){
+  //   return <div><h2 className='text-center text-danger'>No items found.</h2></div>
+  // }
 
   const handlePriceRangeChange=(e)=>{
     let newProds;
-    console.log(e.target.value)
     setSelectedSort(e.target.value)
     if(e.target.value==='lowest'){
        newProds=allProducts.sort((a,b)=>{return a.price-b.price})
@@ -42,20 +39,19 @@ export default function Products(){
 
     }
     setAllProducts(newProds)
-    console.log(newProds)
   }
 
   return (
     <div>
       <h2 className='text-uppercase pathname py-3'>{location.pathname}</h2>
-    {loading?<Loader/>:<div className='container my-3'>
+    <div className='container my-3'>
        <div className='row justify-content-between'>
        <div className='col-md-2'>
          <Searchside categories={categories} getAllProducts={getAllProducts}/>
        </div>
           <div className='col-md-10'>
-            
-           <div className='row'>
+       {   loading?<Loader/>: <div className='row'>
+
       <div className="d-flex justify-content-between mx-2">
       <p className='lead fw-bold'>{allProducts.length} items found.</p>
       <select value={selectedSort} onChange={handlePriceRangeChange}>
@@ -68,12 +64,12 @@ export default function Products(){
           return <div key={singleProduct.id} className='col-md-4 col-lg-3 col-6'><SingleProduct singleProduct={singleProduct}/></div>
         })
       }
-           </div> 
+           </div> }
            
       </div>
        </div> 
      
-    </div>}
+    </div>
     </div>
     
   )
